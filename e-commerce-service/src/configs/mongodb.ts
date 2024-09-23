@@ -1,14 +1,15 @@
 import mongoose from "mongoose";
-import * as dotenv from "dotenv";
+import dotenv from "dotenv";
+
 dotenv.config();
 
-export const connect = async () => {
-  const MONGODB_URI = process.env.LI || "";
+const MONGODB_URI = process.env.MONGODB_URI || "";
+
+export const connect = async () => {   
   try {
-    await mongoose.connect("mongodb+srv://dariaa0560:GFaOLf3iF74creV0@e-commerce.s1z65.mongodb.net/sample_mflix");
+    await mongoose.connect(`${MONGODB_URI}`);
     console.log("Connected to database successfully");
   } catch (error) {
     console.error(error);
   }
-  return
 };
