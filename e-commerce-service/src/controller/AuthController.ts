@@ -34,10 +34,10 @@ const register = async (req: Request, res: Response) => {
 const login = async (req: Request, res: Response) => {
   try {
     const {email, password}= req.body;
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findOne({ email });  
 
     if (!user ) return res.status(401).send ("User does not exist ")  // 2 times res send ued RETURN check hiih 
-      const isSame = await bcrypt.compare(String(password), user.password);
+      const isSame = await bcrypt.compare(String(password), user.password);   // user unen ued ene line iig shalgana, orno  
     if (isSame) {
       return res.send(user);
     }
