@@ -1,3 +1,4 @@
+"use client"
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -5,12 +6,16 @@ function FilterableProductTable({ products }) {
   const [inStockOnly, setInStockOnly] = useState(false);
 
   return (
+    
     <div>
       <SearchBar 
         filterText={filterText} 
-        inStockOnly={inStockOnly} />
+        inStockOnly={inStockOnly} 
+        onFilterTextChange={setFilterText}   // update the filtertext 
+        onInStockOnlyChange={setInStockOnly} 
+        /> 
       <ProductTable 
-        products={products}
+        products={products} 
         filterText={filterText}
         inStockOnly={inStockOnly} />
     </div>
@@ -84,17 +89,23 @@ function ProductTable({ products, filterText, inStockOnly }) {
   );
 }
 
-function SearchBar({ filterText, inStockOnly }) {
+function SearchBar({
+  filterText,
+  inStockOnly,
+  onFilterTextChange,
+  onInStockOnlyChange
+}) {
   return (
     <form>
       <input 
         type="text" 
-        value={filterText} 
-        placeholder="Search..."/>
+        value={filterText} placeholder="Search..." 
+        onChange={(e) => onFilterTextChange(e.target.value)} />
       <label>
         <input 
           type="checkbox" 
-          checked={inStockOnly} />
+          checked={inStockOnly} 
+          onChange={(e) => onInStockOnlyChange(e.target.checked)} />
         {' '}
         Only show products in stock
       </label>
