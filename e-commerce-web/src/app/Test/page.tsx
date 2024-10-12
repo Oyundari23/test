@@ -11,6 +11,25 @@ const products = [
   { category: "Vegetables", price: "$1", stocked: true, name: "Carrot" },
   { category: "Vegetables", price: "$1", stocked: true, name: "Pumpkin" },
 ];
+const prod = [
+  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
+  { category: "Fruits", price: "$1", stocked: true, name: "Banana" },
+  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Onion" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Cabbage" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Carrot" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Pumpkin" },
+];
+
+const produ = [
+  { category: "Fruits", price: "$1", stocked: true, name: "Apple" },
+  { category: "Fruits", price: "$1", stocked: true, name: "Banana" },
+  { category: "Fruits", price: "$1", stocked: true, name: "Dragonfruit" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Onion" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Cabbage" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Carrot" },
+  { category: "Vegetables", price: "$1", stocked: true, name: "Pumpkin" },
+];
 
 function FilterableProductTable({ product }) {
   const [filterText, setFilterText] = useState("");
